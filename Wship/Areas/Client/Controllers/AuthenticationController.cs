@@ -40,8 +40,6 @@ namespace Wship.Areas.Client.Controllers
             {
                 return View(model);
             }
-
-
             var user = new Database.Models.User
             {
                 FirstName = model.FirstName,
@@ -58,6 +56,10 @@ namespace Wship.Areas.Client.Controllers
 
 
 
+        //my next works:
+        // 1. finish register, and login.
+        // 2. separate them new services.
+        // 3. add cookie and products.
 
 
 
