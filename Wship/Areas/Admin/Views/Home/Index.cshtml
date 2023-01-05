@@ -2537,6 +2537,24 @@
                     </div>
                 </a>
             </div>
+
+
+
+
+
+
+
+
+@*            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            ////////////////////////*@
+
+            @using Wship.Areas.Client.ViewModels.Register;
+            @model RegisterViewModel;
+            @using Wship.Services.Abstracts;
+@inject IUserService userService;
+
+
             <div class="header-primary__right d-none d-lg-flex">
                 <a href="#" data-toggle="modal" data-target="#callBack">
                     <div>
@@ -2550,13 +2568,29 @@
                     </div>
                     <span>Onlayn ödəniş</span>
                 </a>
-                                    <a asp-route="client-auth-login">
+
+                                                        @if (userService.IsAuthenticated)
+                                        {
+                                            <a asp-route="admin-home-index">
+                                                <span>@Model.FirstName</span>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                             <a asp-route="client-auth-login">
                         <div>
                             <i class="fas fa-user"></i>
                         </div>
+                        
                         <span>Daxil ol</span>
                     </a>
+                                        }
+                   
                             </div>
+
+                            @*            ///////////////////////////////////////////////////////////////////////////////////////////////
+
+            ////////////////////////*@
             <div id="callback-success-modal" class="modal fade modal-service">
                 <div class="modal-dialog modal-service__dialog">
                     <div class="modal-content modal-service__content">

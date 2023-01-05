@@ -20,7 +20,7 @@ namespace Wship.Areas.Client.ViewModels.Register
         public string? ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Phone number can't be empty.")]
-        [RegularExpression(@"^\+[1-9]{1}[0-9]{7,10}$", ErrorMessage = "Please enter a valid phone number")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Please enter a valid phone number. example, 0559876543")]
         public string? PhoneNumber { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
